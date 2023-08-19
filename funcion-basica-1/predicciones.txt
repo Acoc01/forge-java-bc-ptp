@@ -1,0 +1,96 @@
+Fun1:
+
+Imprime 35 ya que la funcion retorna 35.
+
+Fun2:
+
+Retorna 4 y se esta pasando 4 y 4, luego el resultado
+es sumado antes de imprimir 8.
+
+Fun3:
+
+Retorna b y se esta pasando 2 y 4, luego el resultado
+es sumado antes de imprimir 6.
+
+Fun4:
+
+Imprime primero 3 y luego multiplica 3*3 retornando 9 y
+eso es imprimido por pantalla igual.
+
+Fun5:
+
+Lo mismo que la funcion anterior pero esta vez multiplica
+b*4 y retorna ese resultado sin imprimir el console.log(b)
+e imprime 40.
+
+Fun6:
+
+La función recibe como parametro un numero, en este caso
+15, como 15 es mayor que 10 retorna 4 e imprime 4.
+
+Fun7:
+
+La funcion retorna b*c. El programa primero imprime 10 y luego 3, finalmente el segundo programa imprime 30.
+
+Fun 8:
+
+La funcion a imprime i 10 veces desde 0 hasta 9, luego retorna 10. El programa principal imprime 3 y 4 luego.
+
+Fun 9:
+
+Esta funcion utiliza un loop desde i = 0 hasta i >= 10.
+La peculiaridad de la función es que al entrar al loop
+le suma 2 a i, entonces en una iteración iría 0->3->6->9
+Iría de 3 en 3, por lo que terminaría imprimiendo esos valores por pantalla.
+
+Fun 10:
+
+Esta funcion comienza su iteración en b y sigue hasta que
+b >= que c, finalmente retorna b*c.
+
+Primero se llama a(0,10) lo que imprime 0,1,2...,9
+Luego se llama otra vez e imprime 0,1...,9 y finalmente 0
+ya que 10*0 es 0.
+
+Fun 11:
+Esta funcion es un doble ciclo for, el primero va
+desde 0 hasta 9, el segundo igual desde 0 hasta 9. 
+Ambos se ejecutan 10 veces, lo que pasará aquí
+es que por cada iteración del primero, se imprime
+0,...,9 y luego el valor de i. Por ejemplo para i=1
+0,1,2,3,4,5,6,7,8,9,1 es el resultado de llamar a a().
+
+El problema es que aquí no se está llamando nunca a la
+función a() por lo que no se imprimirá nada.
+
+Fun 12:
+
+Esta función hace exactamente lo anterior, la diferencia
+es que ahora se imprime en cada iteración i,j y j,i.
+
+Por ejemplo la primera iteración sería 0,1,...,0,9,0,10
+
+Pero nuevamente no se imprime nada porque no se llama la función.
+
+Fun 13:
+
+Se declara la variable z = 10.
+
+Se tiene una función que crea otra variable z = 15
+pero esta variable solo vive dentro del scope de a()
+por lo que no cambia el valor de la anterior variable.
+Esta función imprime 15 pero no se está llamando
+por lo que el unico output es el del main que es 10.
+
+Fun 14:
+
+Es similar a la anterior, solo que en este caso si se 
+imprime primero 15 y luego 10, ya que aquí si se llama
+la función a()
+
+Fun 15:
+
+Esta función es similar a la anterior, lo que cambia
+es que ahora retorna z, entonces cuando se hace z = a();
+Se imprime 15 y el z del main cambia a 15 por lo que 
+despues se imprime neuvamente 15.

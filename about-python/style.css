@@ -1,0 +1,175 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  width: 970px;
+  height: 500px; /*Temp*/
+  margin: 0 auto; /*Lo centra por completo*/
+  color: white;
+}
+
+.top-content {
+  background-color: #245076;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px;
+}
+header img {
+  width: 374px;
+}
+#header-right {
+  width: 250px;
+}
+header a {
+  color: yellow;
+}
+header form {
+  background-color: gray;
+  border-radius: 10px;
+  margin-top: 5px;
+  padding: 15px 36px;
+}
+
+form input {
+  width: 120px;
+  text-align: center;
+  padding: 10px;
+}
+
+form button {
+  background-color: #245076;
+  text-align: center;
+  padding: 6px;
+  border-radius: 5px;
+}
+
+nav {
+    width: 800px;
+    height: 50px;
+    background-color: #427cad;
+    margin: 0 auto;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 4px 4px 3px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 4px 4px 3px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 4px 4px 3px 0px rgba(0,0,0,0.75);
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+    align-items: center;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.row{
+    display:flex;
+    width: 800px;
+    margin: 0 auto;
+    color: white;
+    justify-content: space-around;
+    padding: 20px;
+    align-items: center;
+}
+
+.page_guide{
+    text-align: center;
+}
+
+.page_guide a{
+    color: white;
+}
+
+.row div{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.row div ul{
+    color: yellow;
+    list-style: none;
+    font-style: italic;
+}
+
+.row div ul li{
+    margin-top: 10px;
+}
+
+#zen{
+    color: white;
+    font-style: normal;
+}
+
+.middle-content {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.content-python{
+  border-top: 4px solid #427cad;
+  width: 400px;
+  color: black;
+}
+
+.content-python p{
+  color: black;
+  margin-bottom: 10px;
+}
+
+.content-python h3{
+  margin: 10px 0;
+}
+
+.content-python ul{
+  color:black;
+  list-style: square;
+}
+
+.content-python .blue{
+  color:#427cad;
+}
+
+footer{
+  padding-top: 50px;
+  padding-bottom: 10px;
+  background-color: #245076;
+}
+
+footer ul{
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  text-transform: capitalize;
+  color: #1d5584;
+}
+
+footer ul a{
+  text-decoration: none;
+  color: #7fb2de;
+}
+
+footer p{
+  font-size: 10px;
+  text-align: center;
+  color: #7fb2de;
+  margin-top: 20px;
+}

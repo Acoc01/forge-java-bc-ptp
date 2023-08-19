@@ -1,0 +1,184 @@
+* {
+  /* outline: 1px dotted red; */
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+.main-wrapper {
+  padding-bottom: 5%;
+  height: 100vh;
+  background-color: #241318;
+}
+.main-container {
+  margin-left: auto;
+  margin-right: auto;
+  position:relative;
+  width: 80%;
+  height: 100%;
+  background-color: #6f5964;
+}
+.title-container {
+  height: 8%;
+  width: 100%;
+  background-color: #F5F5F5;
+}
+.subtitle-wrapper{
+  display:inline-block;
+  margin-left:50%;
+}
+.title-wrapper{
+  display: inline-block;
+  margin:20px;
+}
+
+.about-section{
+  position:relative;
+  height: 40%;
+  width: 100%;
+}
+.about-img{
+  display: inline-block;
+  vertical-align: top;
+  padding:1px;
+  margin-left: 3%;
+  margin-right: 5%;
+  margin-top: 3%;
+  background-color: #EBE2EA;
+}
+.about-description{
+  display: inline-block;
+  margin-right: 2%;
+  margin-top: 3%;
+  background-color: #EBE2EA;
+}
+/* Por que no puedo definir las dimensioenes
+del inline-block y adecuar esta imagen al padre
+que tiene inline-block
+
+Si lo hago, al intentar agregar
+margen, se desarma todo.*/
+.photo-of-me{
+  display:block;
+  margin: 4px;
+  height: 300px;
+  width: 500px;
+}
+
+.about-desc-wrapper{
+  display:block;
+  height: 300px;
+  width: 500px;
+}
+
+.about-desc-title{
+  position:relative;
+  width:100%;
+  height: 20%;
+  background-color: #8A8895;
+}
+/* Por que si el objeto no es absoluto, al agregar
+margen en top empuja al padre igual, pense
+que solo iba a empujar al hijo del padre y no a
+ambos del body. */
+.h2-title{
+  position:absolute;
+  margin:20px;
+  color:white;
+}
+.about-desc-content{
+  height:78%;
+  width: 96%;
+  margin:1%;
+}
+p{
+  margin-top:5px;
+  margin-bottom: 20px;
+}
+/* Project section */
+.project-section{
+  height:52%;
+  width: 95%;
+  padding-left: 5%;
+}
+.project-container{
+  display: inline-block;
+  margin-top: 2%;
+  margin-right: 1%;
+  margin-left: 5%;
+}
+.project-title{
+  position:relative;
+  width:100%;
+  height: 10%;
+  background-color: #8A8895;
+}
+.h2-project-title{
+  position:absolute;
+  margin:10px;
+  color: white;
+}
+.project-img-container{
+  height: 20%;
+  position:block;
+  margin-bottom: 5%;
+  background-color: black;
+}
+.project-wrapper{
+  width: 270.750px;
+  height: 450px;
+  background-color: #EBE2EA;
+}
+.project-img{
+  height: 25%;
+  width: 100%;
+}
+.project-description{
+  height: 20%;
+  margin:2%;
+}
+a{
+  color:black;
+}
+.project-tech-row{
+  height:10%;
+  margin-top: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.tech-img{
+  width: 15%;
+  margin-right: 3%;
+}
+.button-row{
+  height:10%;
+  margin-bottom: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
+  display: flex;
+}
+.page-button{
+  margin: auto;
+  color: white;
+  background-color: #407D61;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.7);
+  border-radius: 20px;
+}
+.footer{
+  height: 7.3%;
+  background-color: #F5F5F5;
+}
+.footer-row{
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-img{
+  width:2%;
+  margin-left:1%;
+}

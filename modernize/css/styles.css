@@ -1,0 +1,206 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* border: 1px dotted red; */
+}
+
+.box{
+    width: 1000px;
+    margin: 0 auto;
+    background-color: #424242;
+}
+
+.top-section{
+    width: 100%;
+}
+
+header{
+    padding-top:30px;
+    background-color: #1A1A1A;
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+header p{
+    color: #CFCFCF;
+    align-self:baseline;
+    margin-right:10px;
+}
+
+header img{
+    height: 50%;
+    margin-left: 20px;
+    margin-bottom:20px;
+}
+
+nav{
+    background-color: #424242;
+    width: 100%;
+    text-align: center;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    padding:10px;
+}
+
+nav ul li{
+    color: #CFCFCF;
+    padding:0 10px;
+    border-right: 1px solid #292929;
+}
+nav ul li a{
+    color: #CFCFCF;
+    text-decoration: none;
+}
+
+nav ul li:last-child{
+    border: 0;
+}
+/*For some reason there is a blank space between the main-image
+and the services-row and i don't know why, also is there a way
+to define the height and width without making them static?
+
+I had to stablish the width of the .content and the height of the 
+.services-row, i coudln't use padding or margin to make it fit like
+the image.*/
+
+#main-image{
+    width: 100%;
+}
+
+.services-row{
+    background-color: #1A1A1A;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    height: 130px ;
+}
+
+.services-row-content{
+    margin-top:20px;
+    display: flex;
+}
+
+/*How can i justify the text like the example for this rows?*/
+.content{
+    width: 200px;
+}
+
+.content p{
+    font-size: smaller;
+}
+
+.services-row img{
+    height: 30px;
+    width: 40px;
+    margin-right: 10px;
+}
+
+.services-row h3{
+    color:#EA7E2B;
+}
+
+.services-row p{
+    color: white;
+    font-size: small;
+}
+
+.buy-section{
+    position: relative;
+    width: 100%;
+    height: 130px;
+    background-color: black;
+}
+
+.buy-section-wrapper{
+    position:absolute;
+    margin:20px;
+    display: flex;
+}
+
+.buy-section-wrapper h2{
+    color: white;
+}
+
+.buy-section-wrapper p{
+    color:#929292;
+}
+
+.buy-section-wrapper button{
+    width: 20%;
+    align-self: center;
+    height: 30px;
+    color: white;
+    background-color: #EA7E2B;
+    cursor: pointer;
+}
+/*This footer doesn't have the flex property so it should have
+fixed dimentions right?*/
+footer{
+    width: 100%;
+    height: 380px;
+    background-color: #1A1A1A;
+    padding-top:20px;
+    position:relative;
+}
+
+
+.footer-title{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.footer-title h3{
+    color: white;
+    margin-left:20px;
+}
+
+.footer-title a{
+    text-decoration: none;
+    color:#EA7E2B;
+    margin-right:20px;
+}
+
+.projects-section{
+    margin: 0 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-card{
+    width: 220px;
+}
+
+.project-card img{
+    border: 3px solid #6d6d6d;
+    width: 100%;
+}
+
+.project-card h3{
+    color: #EA7E2B;
+    margin-bottom: 10px;
+}
+
+.project-card p{
+    color: white;
+}
+
+.back-to-top{
+    position: absolute;
+    color: #6d6d6d;
+    text-decoration: none;
+    bottom:0;
+}
+
+.to-top-container{
+    display: flex;
+    margin-right: 20px;
+    justify-content: flex-end;
+}

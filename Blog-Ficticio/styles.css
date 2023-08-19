@@ -1,0 +1,14 @@
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.container{
+    width:25%;
+}
+
+.email{
+    border: 2px solid black;
+}
+form{
+    padding-top: 0.1rem;
+}

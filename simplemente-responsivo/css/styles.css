@@ -1,0 +1,42 @@
+*{margin:0; padding:0; border:0;}
+
+header{
+    background-color: #B3B3B3;
+}
+
+main{
+    background-color: #B3B3B3;
+}
+
+footer{
+    background-color: #FFFF9A;
+}
+
+span{
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 1024px){
+    .Tablet{
+        display:none;
+    }
+    .Phone{
+        display:none;
+    }
+}
+@media only screen and (min-width: 481px) and (max-width: 1023px){
+    .Desktop{
+        display:none;
+    }
+    .Phone{
+        display:none;
+    }
+}
+@media only screen and (max-width: 480px){
+    .Desktop{
+        display:none;
+    }
+    .Tablet{
+        display:none;
+    }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Mi formulario de registro</h1>
+    <form>
+      <div>
+        <label style="padding-right: 25px" for="name">Nombre: </label>
+        <input type="text" id="name" />
+      </div>
+      <br />
+      <div>
+        <label style="padding-right: 23px" for="apellido">Apellido: </label>
+        <input type="text" id="apellido" />
+      </div>
+      <br />
+      <div>
+        <label style="padding-right: 40px" for="email">Email: </label>
+        <input type="text" id="email" />
+      </div>
+      <br />
+      <div>
+        <label style="padding-right: 8px" for="pwd">Contraseña: </label>
+        <input type="password" id="pwd" />
+      </div>
+      <br />
+      <div>
+        <label style="padding-right: 13px" for="cpwd">Confirmar: </label>
+        <input type="password" id="cpwd" />
+      </div>
+      <br />
+      <div>
+        <label style="padding-right: 13px" for="cumple">Cumpleaños</label>
+        <input type="date" id="cumple" />
+      </div>
+      <br />
+      <br />
+      <div>
+        <input type="radio" id="masc" />
+        <label style="padding-right: 13px" for="masc">Masculino</label>
+        <input type="radio" id="fem" />
+        <label style="padding-right: 13px" for="fem">Femenino</label>
+        <input type="radio" id="otro" />
+        <label style="padding-right: 13px" for="otro">Otro</label>
+      </div>
+      <br />
+      <br />
+      <div>
+        <label for="desc">Una breve descripcion de ti: </label>
+        <br />
+        <textarea id="desc" rows="10" cols="40"></textarea>
+      </div>
+      <br />
+      <div>
+        <label for="favorito">Lenguaje Favorito: </label>
+        <select id="favorito">
+          <option value="cpp">C++</option>
+          <option value="python">Python</option>
+          <option value="csharp">C#</option>
+        </select>
+      </div>
+      <br />
+      <div>
+        <button type="submit">Enviar</button>
+      </div>
+    </form>
+  </body>
+</html>

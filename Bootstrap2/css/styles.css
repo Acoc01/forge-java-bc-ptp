@@ -1,0 +1,30 @@
+*{margin:0; padding:0; border:0;}
+
+body{
+    padding: 5px;
+}
+
+.header{
+    height: 200px;
+}
+
+.header-button{
+    width: 350px;
+    height: 30px;
+}
+
+.aside{
+    height: 300px;
+}
+
+.articles{
+    height: 400px;
+}
+
+.bg-yellow{
+    background-color: #F4C109;
+}
+
+.height-70{
+    height: 70px;
+}
