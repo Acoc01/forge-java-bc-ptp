@@ -12,5 +12,6 @@
 	<h2>Haz visitado la pagina de inicio ${ contador } veces</h2>
 	<a href="/" class="btn btn-info">Regresar al inicio</a>
 	<a href="/reset" class="btn btn-danger">Reset</a>
+	<a href="/counter2" class="btn btn-danger">+2</a>
 </body>
 </html>

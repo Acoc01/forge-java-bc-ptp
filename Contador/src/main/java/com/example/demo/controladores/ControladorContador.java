@@ -29,6 +29,19 @@ public class ControladorContador {
 		return "counter.jsp";
 	}
 	
+	@GetMapping("/counter2")
+	public String counter2(HttpSession session) {
+		Object contadorObjeto = session.getAttribute("contador");
+		if(contadorObjeto == null) {
+			session.setAttribute("contador", 1);
+		}else {
+			Integer contador = (Integer) contadorObjeto;
+			contador+=2;
+			session.setAttribute("contador", contador);
+		}
+		return "counter.jsp";
+	}
+	
 	@GetMapping("/reset")
 	public String reset(HttpSession session) {
 		session.invalidate();
