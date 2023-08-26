@@ -1,18 +1,31 @@
 package com.example.demo.controladores;
 
 import java.util.HashMap;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.example.demo.models.Usuario;
+import com.example.demo.services.Services;
+
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 
 @Controller
 public class ControladorUsuarios {
+	@Autowired
+	private Services servicio;
+	
 	@GetMapping("/")
 	public String index() {
 		return "index.jsp";
@@ -67,4 +80,41 @@ public class ControladorUsuarios {
 		}
 		return "bienvenida.jsp";
 	}
+	
+	@GetMapping("/dashboard")
+	public String dashboard(Model model) {
+		List<Usuario> usuarios = servicio.todosUsuarios();
+		model.addAttribute("usuarios",usuarios);
+		return "dashboard.jsp";
+	}
+	
+	@GetMapping("/nuevo")
+	public String nuevo(@ModelAttribute("usuario") Usuario user) {
+		return "nuevo.jsp";
+	}
+	
+	@PostMapping("/crear")
+	public String crear(@Valid @ModelAttribute("usuario") Usuario user,
+						BindingResult result) {
+		if(result.hasErrors()) {
+			return "nuevo.jsp";
+		}else {
+			servicio.guardarUsuario(user);
+			return "redirect:/dashboard";
+		}
+	}
+	
+	@GetMapping("/mostrar/{id}")
+	public String mostrar(@PathVariable("id") Long id, Model model) {
+		Usuario usuarioBuscado = servicio.buscarUsuario(id);
+		model.addAttribute("usuario",usuarioBuscado);
+		return "mostrar.jsp";
+	}
+	
+	@DeleteMapping("/borrar/{id}")
+	public String borrar(@PathVariable("id") Long id) {
+		servicio.deleteUsuario(id);
+		return "redirect:/dashboard";
+	}
+	
 }
