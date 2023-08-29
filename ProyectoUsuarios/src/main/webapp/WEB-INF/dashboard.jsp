@@ -15,6 +15,12 @@
 			<h1>¡Bienvenid@ a tu Dashboard!</h1>	
 			<a href="/nuevo" class="btn btn-success">Nuevo Usuario</a>
 		</header>	
+		<form action="/busqueda" method="POST" class="row">
+			<div class="col-10">
+				<input type="text" name="palabra" class=" form-control" placeholder="Ingresar nombre">
+			</div>
+			<input type="submit" value="Buscar" class="col-2 btn btn-primary">
+		</form>
 		<table class="table table-hover">
 			<thead>
 				<tr>
@@ -32,6 +38,7 @@
 						<td>${ usuario.email }</td>
 						<td>
 							<a href="/mostrar/${ usuario.id }" class="btn btn-info">Mostrar</a>	
+							<a href="/editar/${ usuario.id }" class="btn btn-primary">Editar</a>
 							<form action="/borrar/${ usuario.id }" method="post">
 								<input type="hidden" name="_method" value="DELETE"/>
 								<input type="submit" value="Eliminar" class="btn btn-danger"/>

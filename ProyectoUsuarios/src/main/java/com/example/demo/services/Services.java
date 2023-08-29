@@ -30,4 +30,11 @@ public class Services {
 		repoUsuarios.deleteById(id); //It doesn't matter if id isn't valid
 	}
 
+	public List<Usuario> findByName(String word){
+		return repoUsuarios.findByNameContaining(word);
+	}
+	
+	public List<Usuario> top10(){
+		return repoUsuarios.findTop10ByOrderByNameAsc();
+	}
 }
