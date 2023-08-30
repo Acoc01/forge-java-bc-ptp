@@ -12,9 +12,11 @@ public interface RepositorioUsuarios extends CrudRepository<Usuario, Long> {
 
 	List<Usuario> findAll();
 	Usuario save(Usuario nuevoUsuario);
+	//Dynamic Query
 	List<Usuario> findByEmail(String email);
 	List<Usuario> findByName(String nombre);
 	List<Usuario> findByNameStartingWith(String letras);
 	List<Usuario> findByNameContaining(String word);
 	List<Usuario> findTop10ByOrderByNameAsc();
+	List<Usuario> findByDireccionIdIsNull();
 }

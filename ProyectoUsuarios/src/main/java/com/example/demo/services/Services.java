@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.models.Direccion;
 import com.example.demo.models.Usuario;
+import com.example.demo.repositories.RepositorioDirecciones;
 import com.example.demo.repositories.RepositorioUsuarios;
 
 @Service
@@ -13,6 +15,9 @@ public class Services {
 
 	@Autowired //No es una instancia
 	private RepositorioUsuarios repoUsuarios;
+	
+	@Autowired
+	private RepositorioDirecciones repoDir;
 	
 	public List<Usuario> todosUsuarios(){
 		return repoUsuarios.findAll();
@@ -36,5 +41,13 @@ public class Services {
 	
 	public List<Usuario> top10(){
 		return repoUsuarios.findTop10ByOrderByNameAsc();
+	}
+	
+	public Direccion guardarDireccion(Direccion nuevaDireccion) {
+		return repoDir.save(nuevaDireccion);
+	}
+	
+	public List<Usuario> usuariosSinDireccion(){
+		return repoUsuarios.findByDireccionIdIsNull();
 	}
 }

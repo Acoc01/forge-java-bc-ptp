@@ -12,36 +12,35 @@
 
 	<div class="container">
 		<header class="d-flex justify-content-between align-items-center">
-			<h1>¡Bienvenid@ a tu Dashboard!</h1>	
-			<a href="/nuevo" class="btn btn-success">Nuevo Usuario</a>
+			<h1>¡Welcome to your Dashboard!</h1>	
 		</header>	
-		<form action="/busqueda" method="POST" class="row">
-			<div class="col-10">
-				<input type="text" name="palabra" class=" form-control" placeholder="Ingresar nombre">
+		<div class="row justify-content-between">
+			<a href="/songs/new" class="btn btn-success col-3">Add New</a>
+			<a href="/search/topTen" class="btn btn-primary col-3">Top Ten</a>
+			<div class="col-4">
+				<form action="/search" method="POST" class="row">
+					<div class="col-10">
+						<input type="text" name="word" class=" form-control" placeholder="Ingresar nombre">
+					</div>
+					<input type="submit" value="Buscar" class="col-2 btn btn-primary">
+				</form>
 			</div>
-			<input type="submit" value="Buscar" class="col-2 btn btn-primary">
-		</form>
+		</div>
 		<table class="table table-hover">
 			<thead>
 				<tr>
-					<th>Nombre</th>
-					<th>Apellido</th>
-					<th>Email</th>
-					<th>Direccion</th>
-					<th>Acciones</th>
+					<th>Title</th>
+					<th>Rating</th>
+					<th>Action</th>
 				</tr>	
 			</thead>
 			<tbody>
-				<c:forEach items="${ usuarios }" var ="usuario">
+				<c:forEach items="${ songs }" var ="song">
 					<tr>
-						<td>${ usuario.name }</td>
-						<td>${ usuario.lastName }</td>
-						<td>${ usuario.email }</td>
-						<td>${ usuario.direccion.calle } ${ usuario.direccion.numero }</td>
+						<td><a href="/songs/${song.id}">${ song.title }</a></td>
+						<td>${ song.rating }</td>
 						<td>
-							<a href="/mostrar/${ usuario.id }" class="btn btn-info">Mostrar</a>	
-							<a href="/editar/${ usuario.id }" class="btn btn-primary">Editar</a>
-							<form action="/borrar/${ usuario.id }" method="post">
+							<form action="/delete/${ song.id }" method="post" >
 								<input type="hidden" name="_method" value="DELETE"/>
 								<input type="submit" value="Eliminar" class="btn btn-danger"/>
 							</form>
