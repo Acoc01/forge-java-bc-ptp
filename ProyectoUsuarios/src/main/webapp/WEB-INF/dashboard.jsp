@@ -28,6 +28,8 @@
 					<th>Apellido</th>
 					<th>Email</th>
 					<th>Direccion</th>
+					<th>Salon</th>
+					<th>Hobbies</th>
 					<th>Acciones</th>
 				</tr>	
 			</thead>
@@ -38,6 +40,14 @@
 						<td>${ usuario.lastName }</td>
 						<td>${ usuario.email }</td>
 						<td>${ usuario.direccion.calle } ${ usuario.direccion.numero }</td>
+						<td>${ usuario.salon.nombre }</td>
+						<td>
+							<ul>
+								<c:forEach items="${ usuario.hobbies }" var = "hobby">
+									<li>${ hobby.actividad }</li>	
+								</c:forEach>	
+							</ul>	
+						</td>
 						<td>
 							<a href="/mostrar/${ usuario.id }" class="btn btn-info">Mostrar</a>	
 							<a href="/editar/${ usuario.id }" class="btn btn-primary">Editar</a>
@@ -45,6 +55,7 @@
 								<input type="hidden" name="_method" value="DELETE"/>
 								<input type="submit" value="Eliminar" class="btn btn-danger"/>
 							</form>
+							<a href="/asignar/${usuario.id}"class="btn btn-warning">Asignar Hobby</a>
 						</td>
 					</tr>	
 				</c:forEach>

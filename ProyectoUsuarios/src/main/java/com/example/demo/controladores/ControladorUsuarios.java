@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.example.demo.models.Salon;
 import com.example.demo.models.Usuario;
 import com.example.demo.services.Services;
 
@@ -90,14 +91,18 @@ public class ControladorUsuarios {
 	}
 	
 	@GetMapping("/nuevo")
-	public String nuevo(@ModelAttribute("usuario") Usuario user) {
+	public String nuevo(@ModelAttribute("usuario") Usuario user, Model model) {
+		List<Salon> salones = servicio.todosSalones();
+		model.addAttribute("salones", salones);
 		return "nuevo.jsp";
 	}
 	
 	@PostMapping("/crear")
 	public String crear(@Valid @ModelAttribute("usuario") Usuario user,
-						BindingResult result) {
+						BindingResult result, Model model) {
 		if(result.hasErrors()) {
+			List<Salon> salones = servicio.todosSalones();
+			model.addAttribute("salones",salones);
 			return "nuevo.jsp";
 		}else {
 			servicio.guardarUsuario(user);
@@ -121,14 +126,18 @@ public class ControladorUsuarios {
 	@GetMapping("/editar/{id}")
 	public String editar(@PathVariable("id") Long id, @ModelAttribute("usuario") Usuario usuario, Model model) {
 		Usuario usuarioBuscado = servicio.buscarUsuario(id);
+		List<Salon> salones = servicio.todosSalones();
 		model.addAttribute("usuario", usuarioBuscado);
+		model.addAttribute("salones",salones);
 		
 		return "editar.jsp";
 	}
 	
 	@PutMapping("/actualizar/{id}")
-	public String actualizar( @Valid @ModelAttribute("usuario") Usuario usuario, BindingResult result) {
+	public String actualizar( @Valid @ModelAttribute("usuario") Usuario usuario, BindingResult result, Model model) {
 		if(result.hasErrors()) {
+			List<Salon> salones = servicio.todosSalones();
+			model.addAttribute("salones",salones);
 			return "editar.jsp";
 		} else {
 			servicio.guardarUsuario(usuario);
