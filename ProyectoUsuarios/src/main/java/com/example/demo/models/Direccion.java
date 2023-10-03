@@ -4,6 +4,8 @@ import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -50,6 +52,7 @@ public class Direccion {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;
 	
+	@JsonBackReference(value="direcciones-json") // El atributo señalado no se va a visualizar
 	@OneToOne(fetch=FetchType.LAZY) // Tipo de relacion
 	@JoinColumn(name="usuario_id") // Llave foranea
 	private Usuario usuario;		//Objeto usuario relacionado

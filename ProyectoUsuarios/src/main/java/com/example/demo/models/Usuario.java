@@ -5,6 +5,9 @@ import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -54,13 +57,16 @@ public class Usuario {
 	@DateTimeFormat(pattern="yyy-MM-dd")
 	private Date updatedAt;
 	
+	@JsonManagedReference(value="direcciones-json")
 	@OneToOne(mappedBy="usuario", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	private Direccion direccion;
 	
+	@JsonBackReference(value="salones-json")
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="salon_id")
 	private Salon salon;
 	
+	@JsonManagedReference(value="hobbies-json")
 	@ManyToMany(fetch=FetchType.LAZY)
 	@JoinTable(
 			name="usuarios_tienen_hobbies",
